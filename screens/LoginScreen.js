@@ -1,15 +1,28 @@
 import AuthContent from '../components/Auth/AuthContent';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import LoadingOverlay from '../components/ui/LoadingOverlay';
 import { login } from '../utils/auth';
 import { Alert } from 'react-native';
+import { AuthContext } from '../store/auth-context';
+
+
 
 function LoginScreen() {
   const [isAuthenticating, setIsAuthenticating] = useState(false);
+
+  const authContext = useContext(AuthContext);
+
   async function signInHandler({email, password}) {
     setIsAuthenticating(true);
     try {
+
+/*       const token = authContext.token;
+      const expiry = authContext.expiry;
+      const access_token = authContext.access_token; */
+      console.log("login", token, expiry, access_token);
+
       const response = await login({email, password});
+      console.log("response login screen", response);
       setIsAuthenticating(false);
       if (response.status === 200) {
         // Navigate to the "LoginScreen"
