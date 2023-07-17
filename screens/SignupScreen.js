@@ -2,6 +2,7 @@ import { useState } from 'react';
 import AuthContent from '../components/Auth/AuthContent';
 import { createUser } from '../utils/auth';
 import LoadingOverlay from '../components/ui/LoadingOverlay';
+import { Alert } from 'react-native';
 
 
 function SignupScreen({navigation}) {
@@ -17,6 +18,7 @@ function SignupScreen({navigation}) {
         } else {
           // Handle other response statuses if needed
           console.log('User creation failed');
+          Alert.alert('User creation failed', 'Please retry later.');
         }
     } catch (err) {
       console.log(err);

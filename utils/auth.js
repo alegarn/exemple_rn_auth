@@ -36,9 +36,10 @@ async function authenticate({email, password}) {
     console.log("client", response.data.headers.client);
     return response.data;
   }).catch((error) => {
-    console.log(error);
+    console.log("error", error);
     return error;
   });
+  console.log("response", response);
   return response;
 }
 
@@ -79,7 +80,7 @@ export async function createUser({email, password, confirmPassword}) {
 };
 
 export async function login({email, password}) {
-  await authenticate({email, password});
+  return await authenticate({email, password});
 };
 
 // a4@a.com
