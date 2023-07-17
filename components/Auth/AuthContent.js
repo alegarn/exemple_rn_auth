@@ -36,7 +36,7 @@ function AuthContent({ isLogin, onAuthenticate }) {
     confirmPassword = confirmPassword.trim();
 
     const emailIsValid = email.includes('@');
-    const passwordIsValid = password.length > 6;
+    const passwordIsValid = password.length > 5;
     const emailsAreEqual = email === confirmEmail;
     const passwordsAreEqual = password === confirmPassword;
 
