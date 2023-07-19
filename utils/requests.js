@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = "https://e6a9-103-182-81-19.ngrok-free.app/";
+const URL = "https://75dd-103-182-81-23.ngrok-free.app/";
 
 export async function getExpenses({
   token,

@@ -7,6 +7,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import LoginScreen from './screens/LoginScreen';
 import SignupScreen from './screens/SignupScreen';
 import WelcomeScreen from './screens/WelcomeScreen';
+import CameraScreen from './screens/CameraScreen';
 
 import IconButton from './components/ui/IconButton';
 
@@ -50,6 +51,14 @@ function AuthenticatedStack() {
             color={tintColor}
             size={24}
             onPress={authContext.logout}/>)
+      }}/>
+      <Stack.Screen name="Camera" component={CameraScreen} options={{
+        headerRight: ({tintColor}) => (
+          <IconButton
+            icon="exit"
+            color={tintColor}
+            size={24}
+            onPress={({navigation}) => navigation.goBack()}/>)
       }}/>
     </Stack.Navigator>
   );
