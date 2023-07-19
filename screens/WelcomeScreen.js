@@ -14,8 +14,6 @@ function WelcomeScreen({navigation}) {
       <Button title="Image Picker" onPress={() => navigation.navigate('Camera')}>Image Picker </Button>
       <Text>You authenticated successfully!</Text>
       <ExpensesList userContext={userContext} />
-
-
     </View>
   );
 }
