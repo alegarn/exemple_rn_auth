@@ -1,10 +1,18 @@
 import { StyleSheet, Text, View } from 'react-native';
+import { useContext } from 'react';
+import { AuthContext } from '../store/auth-context';
+import ExpensesList from '../components/ExpensesList';
+
 
 function WelcomeScreen() {
+  const userContext = useContext(AuthContext);
+
   return (
     <View style={styles.rootContainer}>
       <Text style={styles.title}>Welcome!</Text>
       <Text>You authenticated successfully!</Text>
+      <ExpensesList userContext={userContext} />
+
     </View>
   );
 }

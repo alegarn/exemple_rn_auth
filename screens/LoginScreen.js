@@ -18,7 +18,8 @@ function LoginScreen() {
       console.log("response login screen", response);
       if (response.status === 200) {
         // Navigate to the "LoginScreen" set in App.js
-        authContext.authenticate(response.headers.authorization);
+        console.log("token", response.headers.authorization, "expiry", response.headers.expiry, "access_token", response.headers['access-token'], "uid", response.headers.uid, "client", response.headers.client, "id", response.data.data.id);
+        authContext.authenticate({ token: response.headers.authorization, expiry: response.headers.expiry, access_token: response.headers['access-token'], uid: response.headers.uid, client: response.headers.client, userId: response.data.data.id});
         console.log("authentification login screen", authContext.IsAuthenticated);
         console.log("header", response.headers.authorization);
         console.log('User login successful');
